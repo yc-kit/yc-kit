@@ -51,8 +51,17 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    // Doc: https://github.com/Developmint/nuxt-purgecss
+    // TODO: It seems the `build.extractCSS = true` play the role of the purgecss ?
+    // The purgecss will only remove the unneeded CSS from .css/.scss file, the css in the .vue file will not be removed
+    'nuxt-purgecss'
   ],
+  purgeCSS: {
+    // your settings here, use static will merge default value, use function will not include default value
+    // enabled default (only activates in production mode)
+    whitelist: ['__nuxt', '__layout']
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -62,6 +71,20 @@ export default {
    ** Build configuration
    */
   build: {
+    extractCSS: true,
+    postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
+      plugins: {
+        // Disable a plugin by passing false as value
+      },
+      preset: {
+        // Change the postcss-preset-env settings
+        autoprefixer: {
+          grid: true
+        }
+      }
+    },
     /*
      ** You can extend webpack config here
      */
