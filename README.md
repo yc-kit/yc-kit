@@ -1,6 +1,6 @@
 # yc-kit
 
-> my web developmental toolkit nuxt.js project
+> my developmental web toolkit nuxt.js project
 
 ## Build Setup
 
