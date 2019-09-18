@@ -51,15 +51,14 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    // Doc: https://github.com/Developmint/nuxt-purgecss
-    // TODO: It seems the `build.extractCSS = true` play the role of the purgecss ?
-    // The purgecss will only remove the unneeded CSS from .css/.scss file, the css in the .vue file will not be removed
-    'nuxt-purgecss'
+    '@nuxtjs/axios'
   ],
   purgeCSS: {
+    // The '@nuxtjs/tailwindcss' already wrap with the 'nuxt-purgecss'
+    // TODO: it seems purgeCSS can not drop the superfluous CSS in the .vue file, but can in the .css flie
     // your settings here, use static will merge default value, use function will not include default value
     // enabled default (only activates in production mode)
+    // Doc: https://github.com/Developmint/nuxt-purgecss#options
     whitelist: ['__nuxt', '__layout']
   },
   /*
