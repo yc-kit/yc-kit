@@ -56,10 +56,12 @@ export default {
   purgeCSS: {
     // The '@nuxtjs/tailwindcss' already wrap with the 'nuxt-purgecss',
     // and auto inject `tailwind.css` to the global CSS setting 'css' section and used the 'postcss' mode
-    // TODO: it seems purgeCSS can not drop the superfluous CSS in the .vue file, but can in the .css flie
+
     // your settings here, use static will merge default value, use function will not include default value
-    // enabled default (only activates in production mode)
+    // To enabled purgecss: default just only activates in production mode
     // Doc: https://github.com/Developmint/nuxt-purgecss#options
+
+    // TODO: it seems purgeCSS can not drop the superfluous CSS in the .vue file, but can in the .css flie
     whitelist: ['__nuxt', '__layout']
   },
   /*
