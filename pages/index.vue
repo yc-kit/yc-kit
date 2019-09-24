@@ -6,7 +6,7 @@
         yc-kit
       </h1>
       <h2 class="subtitle">
-        my developmental web toolkit nuxt.js project
+        a web toolkit nuxt.js project
       </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
