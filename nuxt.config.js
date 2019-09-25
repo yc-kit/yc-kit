@@ -41,10 +41,10 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
+    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
+    '@nuxtjs/tailwindcss'
   ],
   /*
    ** Nuxt.js modules
@@ -61,7 +61,7 @@ export default {
     // To enabled purgecss: default just only activates in production mode
     // Doc: https://github.com/Developmint/nuxt-purgecss#options
 
-    // TODO: it seems purgeCSS can not drop the superfluous CSS in the .vue file, but can in the .css flie
+    // Note: it seems purgeCSS can not drop the superfluous CSS in the .vue file, but can in the .css flie
     whitelist: ['__nuxt', '__layout']
   },
   /*
