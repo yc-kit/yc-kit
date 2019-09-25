@@ -9,12 +9,12 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "stylelint": "stylelint **/*.{css,scss,vue}",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
+    "stylelint": "stylelint assets/**/*.{css,scss} {components,layouts,pages}/**/*.vue",
     "test": "jest"
   },
   "lint-staged": {
-    "*.{js,vue}": "eslint",
+    "*.{js,ts,vue}": "eslint",
     "*.{css,scss,vue}": "stylelint"
   },
   "husky": {
