@@ -1,31 +1,14 @@
 module.exports = {
   root: true,
-  env: {
-    browser: true,
-    node: true,
-    'jest/globals': true
-  },
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
   extends: [
-    '@nuxtjs',
+    '@nuxtjs/eslint-config-typescript', // include `eslint-plugin-jest`, `eslint-plugin-vue`
     'prettier',
-    'plugin:vue/recommended',
-    'plugin:jest/recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:nuxt/recommended',
-    'plugin:prettier/recommended'
-  ],
-  plugins: [
-    'prettier',
-    'jest'
+    'prettier/@typescript-eslint',
+    // 'plugin:prettier/recommended' // this plugin disable all other eslint rules relating to prettier
   ],
   // add your custom rules here
   rules: {
-    'jest/no-disabled-tests': 'warn',
-    'jest/no-focused-tests': 'error',
-    'jest/no-identical-title': 'error',
-    'jest/prefer-to-have-length': 'error',
-    'jest/valid-expect': 'error'
   }
 }
