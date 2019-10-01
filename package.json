@@ -39,7 +39,8 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
-    "nuxt": "^2.9.2"
+    "nuxt": "^2.9.2",
+    "nuxt-webfontloader": "^1.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",

@@ -5,7 +5,12 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
-  theme: {},
+  theme: {
+    fontFamily: {
+      roboto: ['Roboto', 'sans-serif'], // for paragraph, button
+      oswald: ['Oswald', 'sans-serif'] // for heading
+    }
+  },
   variants: {},
   plugins: []
 }

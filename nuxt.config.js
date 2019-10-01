@@ -11,6 +11,9 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      class: ['font-roboto']
+    },
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
@@ -30,7 +33,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [], // '@nuxtjs/tailwindcss' inject `~/assets/css/tailwind.css` automatically
   /*
    ** Plugins to load before mounting the App
    */
@@ -45,27 +48,38 @@ export default {
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
+    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss && https://github.com/Developmint/nuxt-purgecss
     '@nuxtjs/tailwindcss'
   ],
+  purgeCSS: {
+    // Doc: https://github.com/Developmint/nuxt-purgecss#options, purgeCSS only works on production mode
+    // Note: it seems purgeCSS can not drop the superfluous CSS in the .vue file, but can in the .css flie
+    whitelist: ['__nuxt', '__layout']
+  },
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    // Doc: https://github.com/typekit/webfontloader and https://github.com/Developmint/nuxt-webfontloader
+    [
+      'nuxt-webfontloader',
+      {
+        // classes: false, // Disable setting classes on the HTML element
+        custom: {
+          families: [
+            'Roboto:n3,i3,n4,i4,n5,i5,n7,i7',
+            'Oswald:n3,n4,n6,n7' // all style fonts: https://www.fontsquirrel.com/fonts/oswald
+          ],
+          urls: [
+            'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap',
+            'https://fonts.googleapis.com/css?family=Oswald:300,400,600,700&display=swap'
+          ]
+        }
+      }
+    ]
   ],
-  purgeCSS: {
-    // The '@nuxtjs/tailwindcss' already wrap with the 'nuxt-purgecss',
-    // and auto inject `tailwind.css` to the global CSS setting 'css' section and used the 'postcss' mode
-
-    // your settings here, use static will merge default value, use function will not include default value
-    // To enabled purgecss: default just only activates in production mode
-    // Doc: https://github.com/Developmint/nuxt-purgecss#options
-
-    // Note: it seems purgeCSS can not drop the superfluous CSS in the .vue file, but can in the .css flie
-    whitelist: ['__nuxt', '__layout']
-  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
