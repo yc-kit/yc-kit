@@ -25,13 +25,17 @@
 </template>
 
 <script>
+import { createComponent } from '@vue/composition-api'
 import Logo from '~/components/Logo.vue'
 
-export default {
+// @vue/component
+export default createComponent({
+  name: 'YcHomepage',
+
   components: {
     Logo
   }
-}
+})
 </script>
 
 <style>
