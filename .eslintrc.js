@@ -10,6 +10,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'space-before-function-paren': ['error', 'always'], //eslint, but turn 'off' by prettier
     'vue/no-v-html': 'off', // recommended by vue, but `off` for practical usage, if you are certain the content passed to v-html is sanitized HTML.
   }
 }

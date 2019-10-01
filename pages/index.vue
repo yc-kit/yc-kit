@@ -20,12 +20,16 @@
           GitHub
         </a>
       </div>
+      <div class="font-bold mt-4">
+        Date: {{ date.format('YYYY-MM-DD HH:mm:ss') }}
+      </div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang='ts'>
 import { createComponent } from '@vue/composition-api'
+import { useDate } from '@u3u/vue-hooks'
 import Logo from '~/components/Logo.vue'
 
 // @vue/component
@@ -34,6 +38,14 @@ export default createComponent({
 
   components: {
     Logo
+  },
+
+  setup () {
+    const date = useDate(Date.now())
+
+    return { 
+      date
+    }
   }
 })
 </script>
