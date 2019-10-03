@@ -9,6 +9,9 @@ module.exports = {
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'], // for paragraph, button
       oswald: ['Oswald', 'sans-serif'] // for heading
+    },
+    container: {
+      center: true
     }
   },
   variants: {},
