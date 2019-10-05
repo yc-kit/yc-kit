@@ -12,5 +12,8 @@ module.exports = {
   rules: {
     'space-before-function-paren': ['error', 'always'], //eslint, but turn 'off' by prettier
     'vue/no-v-html': 'off', // recommended by vue, but `off` for practical usage, if you are certain the content passed to v-html is sanitized HTML.
+    // below are recommended by @typescript-eslint, but `off` for some reasons, had better have if possible
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   }
 }
