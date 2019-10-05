@@ -21,6 +21,9 @@
       "@/*": [
         "./*"
       ],
+      "yc-layout/*": [
+        "./components/layout/*"
+      ],
       "yc-ui/*": [
         "./components/ui/*"
       ]
