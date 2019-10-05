@@ -92,6 +92,7 @@ export default {
    */
   build: {
     extractCSS: true,
+    transpile: ['vue-awesome'],
     /*
      ** You can extend webpack config here
      */

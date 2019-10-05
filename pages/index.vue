@@ -1,12 +1,11 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="text-gray-400">
-        yc-kit
-      </h1>
-      <div class="font-bold mt-4">
-        Date: {{ date.format('YYYY-MM-DD HH:mm:ss') }}
-      </div>
+  <div class="text-center">
+    <h1 class="text-gray-400">
+      <YcIcon name="heart" />
+      yc-kit
+    </h1>
+    <div class="font-bold mt-4">
+      Date: {{ date.format('YYYY-MM-DD HH:mm:ss') }}
     </div>
   </div>
 </template>
@@ -14,10 +13,15 @@
 <script lang='ts'>
 import { createComponent } from '@vue/composition-api'
 import { useDate } from '@u3u/vue-hooks'
+import { YcIcon } from '@/components/ui/Icon'
 
 // @vue/component
 export default createComponent({
   name: 'YcHomepage',
+
+  components: {
+    YcIcon
+  },
 
   setup () {
     const date = useDate(Date.now())
