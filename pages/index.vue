@@ -13,7 +13,7 @@
 <script lang='ts'>
 import { createComponent } from '@vue/composition-api'
 import { useDate } from '@u3u/vue-hooks'
-import { YcIcon } from '@/components/ui/Icon'
+import { YcIcon } from 'yc-ui'
 
 // @vue/component
 export default createComponent({
