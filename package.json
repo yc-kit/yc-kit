@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
     "stylelint": "stylelint assets/**/*.{css,scss} {components,layouts,pages}/**/*.vue",
-    "test": "jest"
+    "test:unit": "jest"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint",
@@ -73,6 +73,7 @@
     "stylelint-config-standard": "^19.0.0",
     "stylelint-order": "^3.1.1",
     "stylelint-scss": "^3.11.0",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.6.3",
     "vue-jest": "^4.0.0-0"
   }
