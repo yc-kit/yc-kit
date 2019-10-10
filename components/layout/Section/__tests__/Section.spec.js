@@ -21,7 +21,7 @@ describe('Section', () => {
     expect(wrapper.attributes('data-has-aside')).toBe(undefined)
     wrapper.setProps({ hasAside: true })
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.attributes('data-has-aside')).toBe("true")
+      expect(wrapper.attributes('data-has-aside')).toBe('true')
     })
   })
 
@@ -33,7 +33,7 @@ describe('Section', () => {
     })
     expect(wrapper.attributes('data-has-aside')).toBe(undefined)
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.attributes('data-has-aside')).toBe("true")
+      expect(wrapper.attributes('data-has-aside')).toBe('true')
     })
   })
 })

@@ -26,7 +26,7 @@ export default createComponent({
   setup () {
     const date = useDate(Date.now())
 
-    return { 
+    return {
       date
     }
   }

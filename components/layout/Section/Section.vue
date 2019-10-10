@@ -15,8 +15,8 @@ import { createComponent, ref } from '@vue/composition-api'
 
 declare module 'vue/types/vue' {
   interface Vue {
-    hasAside: boolean,
-    isHasAside: boolean
+    hasAside: boolean;
+    isHasAside: boolean;
   }
 }
 
@@ -30,7 +30,7 @@ export default createComponent({
       default: false
     }
   },
-  
+
   setup () {
     const isHasAside = ref(false)
 

@@ -84,16 +84,16 @@ module.exports = {
     whitespace: ['responsive', 'important'],
     width: ['responsive', 'important'],
     wordBreak: ['responsive', 'important'],
-    zIndex: ['responsive', 'important'],
+    zIndex: ['responsive', 'important']
   },
   plugins: [
     // Doc: https://tailwindcss.com/docs/plugins/#complex-variants && https://github.com/chasegiunta/tailwindcss-important
     // Note: nuxt-purgecss can drop superfluous css even with `!bg-red-100 or !xxx`
     function ({ addVariant }) {
       addVariant('important', ({ container }) => {
-        container.walkRules(rule => {
+        container.walkRules((rule) => {
           rule.selector = `.\\!${rule.selector.slice(1)}`
-          rule.walkDecls(decl => {
+          rule.walkDecls((decl) => {
             decl.important = true
           })
         })

@@ -26,10 +26,11 @@ export default createComponent({
 
   // More props, see https://github.com/Justineo/vue-awesome#props
   props: {
+    ...Icon.props,
     name: {
       type: String,
       required: true,
-      validator (val: string) {
+      validator: (val: string) => {
         return iconNames.includes(val)
       }
     }
