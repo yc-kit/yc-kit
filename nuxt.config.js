@@ -1,5 +1,3 @@
-import path from 'path'
-
 export default {
   mode: 'universal',
   /*
@@ -103,14 +101,14 @@ export default {
             libraryName: 'yc-layout',
             libraryDirectory: '',
             style: false,
-            // customName: path.resolve(__dirname, './lib/yc-layout/customName.js'), // no cache issue
+            // cache issue
             customName: (name) => {
               const transformed = name
                 .split('-')
                 .slice(2)
                 .map(c => c.charAt(0).toUpperCase() + c.slice(1))
                 .join('')
-              return `yc-layout/${transformed}`
+              return `@/components/layout/${transformed}`
             }
           },
           'yc-layout-import'
@@ -121,26 +119,23 @@ export default {
             libraryName: 'yc-ui',
             libraryDirectory: '',
             style: false,
-            // customName: path.resolve(__dirname, './lib/yc-ui/customName.js'), // no cache issue
+            // cache issue
             customName: (name) => {
               const transformed = name
                 .split('-')
                 .slice(1)
                 .map(c => c.charAt(0).toUpperCase() + c.slice(1))
                 .join('')
-              return `yc-ui/${transformed}`
+              return `@/components/ui/${transformed}`
             }
           },
           'yc-ui-import'
         ]
       ]
-    },
+    }
     /*
      ** You can extend webpack config here
      */
-    extend (config) {
-      config.resolve.alias['yc-layout'] = path.join(__dirname, './components/layout/')
-      config.resolve.alias['yc-ui'] = path.join(__dirname, './components/ui/')
-    }
+    // extend(config, ctx) {}
   }
 }

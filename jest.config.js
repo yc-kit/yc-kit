@@ -3,7 +3,7 @@ module.exports = {
   collectCoverage: true, // default: false
   collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
-    '<rootDir>/pages/**/*.vue',
+    // '<rootDir>/pages/**/*.vue',  // pages had better use end to end testing, like e2e framework cypress
     '!<rootDir>/components/ui/Icon/*.vue'
   ], // default: null
   coverageDirectory: '<rootDir>/tests/unit/coverage', // default: null
@@ -31,9 +31,8 @@ module.exports = {
   ], // default: []
   snapshotSerializers: [], // default
   testMatch: [
-    '**/__tests__/**/*.[jt]s?(x)',
-    '**/?(*.)+(spec|test).[tj]s?(x)'
-  ], // default, Note: can't specify both .spec and .test
+    '<rootDir>/**/__tests__/**/*spec.[jt]s?(x)'
+  ], // default: ['**/__tests__/**/*.[jt]s?(x)','**/?(*.)+(spec|test).[tj]s?(x)'], Note: can't specify both .spec and .test
   testPathIgnorePatterns: ['node_modules'], // default
   testRegex: [], // default
   testURL: 'http://localhost', // default
