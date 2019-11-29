@@ -42,5 +42,8 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest',
     '.*\\.(vue)$': 'vue-jest'
   }, // default: null
-  transformIgnorePatterns: ['node_modules'] // default: 'node_modules'
+  transformIgnorePatterns: [
+    'node_modules',
+    '/node_modules(?![\\\\/]vue-awesome[\\\\/])/'
+  ] // default: 'node_modules'
 }

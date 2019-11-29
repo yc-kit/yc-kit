@@ -5,13 +5,16 @@
   "author": "yinchen",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --hostname 0.0.0.0 --port 3600",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "nuxt start --hostname 0.0.0.0 --port 3606",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
     "stylelint": "stylelint assets/**/*.{css,scss} {components,layouts,pages}/**/*.vue",
-    "test:unit": "jest"
+    "precommit": "lint-staged",
+    "test:unit": "jest",
+    "sb": "start-storybook -p 3660 -s ./static --ci",
+    "build-storybook": "build-storybook -c .storybook -s ./static -o .storybook-static"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint",
@@ -43,9 +46,10 @@
     "@vue/composition-api": "^0.3.2",
     "nuxt": "^2.9.2",
     "nuxt-webfontloader": "^1.1.0",
-    "vue-awesome": "^3.5.4"
+    "vue-awesome": "^4.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.4",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@nuxt/typescript-build": "^0.2.10",
@@ -53,12 +57,25 @@
     "@nuxtjs/eslint-module": "^1.1.0",
     "@nuxtjs/stylelint-module": "^2.0.0",
     "@nuxtjs/tailwindcss": "^1.0.0",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-docs": "^5.2.6",
+    "@storybook/addon-knobs": "^5.2.6",
+    "@storybook/addon-notes": "^5.2.6",
+    "@storybook/addon-viewport": "^5.2.6",
+    "@storybook/addons": "^5.2.6",
+    "@storybook/vue": "^5.2.6",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.12.2",
+    "babel-preset-vue": "^2.0.2",
+    "core-js": "^2.6.5",
     "eslint": "^6.4.0",
+    "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "fork-ts-checker-webpack-plugin": "^3.1.1",
     "husky": "^3.0.5",
     "jest": "^24.1.0",
     "lint-staged": "^9.2.5",
@@ -73,7 +90,10 @@
     "stylelint-order": "^3.1.1",
     "stylelint-scss": "^3.11.0",
     "ts-jest": "^24.1.0",
+    "ts-loader": "^6.2.1",
     "typescript": "^3.6.3",
-    "vue-jest": "^4.0.0-0"
+    "vue-jest": "^4.0.0-0",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10"
   }
 }
